@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="greeting">Loading...</h1>
+  <h2>Please check out our courses</h2>
+
+  <script>
+    const username = localStorage.getItem('username') || 'User';
+    const hour = new Date().getHours();
+    const greeting = hour < 12 ? "Good morning" :
+                     hour < 18 ? "Good afternoon" : "Good evening";
+    document.getElementById('greeting').textContent = `${greeting}, ${username}`;
+  </script>
+</body>
+</html>
